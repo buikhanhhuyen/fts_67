@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   resources :exams, except: [:edit, :destroy]
-  resources :suggest_questions, only: [:new, :create]
+  resources :suggest_questions
   resources :users
   namespace :admin do
     root "static_pages#home"

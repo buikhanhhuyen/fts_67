@@ -1,0 +1,15 @@
+<% provide :title, t("suggest_question.edit") %>
+<h1><%= t "suggest_question.edit" %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @suggest_question do |f| %>
+      <%= render "shared/error_messages", object: @suggest_question %>
+
+      <%= render "suggest_question", f: f %>
+
+      <%= f.submit t("edit.submit"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+

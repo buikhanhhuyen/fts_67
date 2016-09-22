@@ -1,0 +1,11 @@
+<% provide :title, t("suggest_question.index") %>
+<h1><%= t "suggest_question.index" %></h1>
+
+<%= will_paginate %>
+  <% @suggest_questions.each do |suggest_question| %>
+    <div>
+      <span><%= link_to suggest_question.content,
+        suggest_question_path(suggest_question) %></span>
+     </div>
+  <% end %>
+<%= will_paginate %>

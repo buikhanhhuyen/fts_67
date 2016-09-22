@@ -13,7 +13,7 @@ class Admin::SuggestQuestionsController < ApplicationController
     if @suggest_question.update_attributes status: params[:status]
       flash[:success] = t "suggest_question.update_success"
     else
-      flash[:danger] = t "suggest_question.udate_error"
+      flash[:danger] = t "suggest_question.update_error"
     end
     redirect_to admin_suggest_questions_path
   end

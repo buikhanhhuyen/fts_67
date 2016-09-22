@@ -1,9 +1,12 @@
 class SuggestQuestion < ApplicationRecord
+  include CheckValidations
   belongs_to :user
 
   validates :user_id, presence: true
 
   after_update :generate_question
+
+  enum status: [:unapproved, :rejected, :approved]
 
   private
   def generate_question
