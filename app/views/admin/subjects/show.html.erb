@@ -1,0 +1,15 @@
+<% provide :title, @subject.name %>
+<div class="row">
+  <aside class="col-md-5">
+    <h1><%= @subject.name %></h1>
+    <h2><li><%= t "subject.duration" %><%= @subject.duration %></li></h2>
+    <h2><li><%= @subject.description %></li></h2>
+    <%= link_to t("question.add"), new_admin_question_path,
+      class: "btn btn-lg btn-primary" %>
+  </aside>
+  <div class="col-md-7">
+    <h3><%= t "question.title" %></h3>
+    <%= render "question" %>
+    <%= will_paginate @questions %>
+  </div>
+</div>

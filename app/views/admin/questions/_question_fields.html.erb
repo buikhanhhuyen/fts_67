@@ -1,0 +1,12 @@
+<%= render "shared/error_messages", object: @question %>
+<p>
+  <%= f.label :content, t("question.label") %><br />
+  <%= f.text_area :content, rows: 3 %><br />
+</p>
+<%= f.label :content, t("answer.label") %><br /><br />
+<%= f.fields_for :answers do |builder| %>
+  <span class="fields">
+    <%= render "answer_fields", f: builder %>
+  </span>
+<% end %>
+<p><%= link_to_add_fields t("answer.add"), f, :answers %></p>

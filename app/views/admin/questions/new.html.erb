@@ -1,0 +1,11 @@
+<% provide :title, t("question.title") %>
+<h3 class="text-center"><%= t("question.title") %></h3>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%= form_for [:admin, @question] do |f| %>
+      <%= f.select :subject_id, @subjects_select %>
+      <%= render "question_fields", f: f %>
+      <%= f.submit t("question.submit"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<% if @questions.any? %>
+  <ol class="questions">
+    <% @questions.each do |question| %>
+      <li>
+        <%= question.content %><br />
+        <%= link_to t("delete.content"), [:admin, question], method: :delete,
+          data: {confirm: t("delete.confirm")} %>
+      </li>
+    <% end %>
+  </ol>
+<% end %>

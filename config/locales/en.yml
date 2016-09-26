@@ -1,23 +1,110 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  header:
+    logo: "Training Education"
+  footer:
+    content: "Framgia Test"
+  home:
+    training: "Education Training"
+    signup: "Sign up now!"
+    home: "Home"
+    user: "User"
+    profile: "Profile"
+  signup:
+    content: "Sign up"
+    submit: "Create my account"
+    welcome: "Welcome to to Training App!"
+  shared:
+    text: "The form contains"
+    error: "error"
+  login:
+    content: "Sign in"
+    danger: "Invalid email or password"
+    account: "Account"
+    success: "Signed in successfully."
+    submit: "Log in"
+  logged_in:
+    danger: "Please log in."
+  find_user:
+    danger: "User not found"
+  logout:
+    content: "Logout"
+  remember_me:
+    content: "Remember me"
+  edit:
+    content: "Edit user"
+    success: "Account updated successfully."
+    submit: "Save changes"
+    confirmation: "Confirmation"
+  clock:
+    count_down: "Remaining Time"
+  exam:
+    invalid_update: "Invalid Exam!"
+    create_error: "Exam has not been created!"
+    not_found: "Exam Not Found!"
+    save_button: "Save"
+    submit_button: "Submit"
+  subject:
+    title: "Add a Subject"
+    success: "Create subject successfully."
+    fail: "Create fail."
+    submit: "Create Subject"
+    updated: "Subject updated successfully"
+    edit: "Edit Subject"
+    content: "Subjects"
+    success: "Subject deleted."
+    danger: "Subject can not delete."
+    duration: "Duration: "
+  flash:
+    not_logged_in: "You are not log in."
+    not_admin: "you are not admin."
+  delete:
+    content: "Delete"
+    confirm: "You sure?"
+  destroy:
+    success: "User deleted."
+    danger: "User can not delete."
+  index:
+    content: "All users"
+    header: "Users"
+  find_subject:
+    danger: "Subject not found."
+  question:
+    label: "Question"
+    title: "Questions"
+    destroy_success: "Question deleted."
+    destroy_fail: "Question can not delete"
+    nil: "question not present."
+    created_fail: "create question fail"
+    created_success: "create question successfully"
+    add: "Add Question"
+    content: "Question"
+    new: "New Questions"
+    edit: "Edit Question"
+    changed: "Changes Question"
+    update_success: "Question has been updated."
+    submit: "Create Question"
+  suggest_question:
+    not_found: "Suggest Question not found!"
+    destroy_success: "Suggest has been deleted."
+    destroy_error: "Suggest Question has not been deleted."
+    update_error: "Suggest Question has not been updated."
+    update_success: "Suggest Question has been updated."
+    radio: "suggest answer radio"
+    approve: "Approve"
+    reject: "Reject"
+    delete: "Delete"
+    confirm: "Do you want to delete this Suggest Question?"
+    create_error: "Suggest question has not been created!"
+    create_success: "Suggest question created successfully!"
+    content: "Suggestion"
+    submit: "Create suggestion"
+    edit: "Edit suggest question"
+  answer:
+    content: "Answer"
+    label: "Answer"
+    add: "Add answer"
+    valid: "should has more than 2 answers."
+    must_check: "must be checked."
+  check_true: "Check if answer is true"
+  answer_size: "should has more than 2 answers."
+  remove: "Remove"

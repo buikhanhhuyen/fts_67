@@ -1,0 +1,9 @@
+<%= f.label f.object.question.content %>
+<% f.object.question.answers.each do |answer| %>
+  <div class="choice">
+    <%= f.radio_button :answer_id, answer.id,
+      checked: answer == f.object.answer,
+      disabled: @exam.unchecked? || @exam.checked? %>
+    <%= answer.content %>
+  </div>
+<% end %>

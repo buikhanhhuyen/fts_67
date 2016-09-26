@@ -1,0 +1,6 @@
+<% @suggest_questions.each do |suggest_question| %>
+  <div>
+    <span><%= link_to suggest_question.subject.name,
+      admin_suggest_question_path(suggest_question) %></span>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<li>
+  <p><%= link_to subject.name, admin_subject_path(subject) %><p>
+  <%= subject.description %>
+  <%= subject.duration %>
+  <%= link_to t("delete.content"), admin_subject_path(subject), method: :delete,
+    data: {confirm: t("delete.confirm")}, class: "btn btn-danger" %><p>
+</li>

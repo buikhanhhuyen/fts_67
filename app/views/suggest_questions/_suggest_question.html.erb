@@ -1,0 +1,10 @@
+<fieldset>
+  <%= f.select :subject_id, @subjects_select %>
+  <%= f.label :content, t("question.content") %><br/>
+  <%= f.text_field :content %>
+  <h2><%= t "answer.content" %></h2>
+  <%= f.fields_for :answers do |builder| %>
+    <%= render "answer", f: builder %>
+  <% end %>
+  <%= link_to_add_answers t("answer.add"), f, :answers %>
+</fieldset>

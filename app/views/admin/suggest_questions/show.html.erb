@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-2">
+    <%= @suggest_question.subject.name %>
+    <%= @suggest_question.content %>
+    <% @suggest_question.answers.each do |answer| %>
+      <label>
+        <%= answer.content %>
+        <%= radio_button_tag answer.content, answer.id,
+          answer.is_correct?, disabled: true %>
+      </label>
+    <% end %>
+    <% if @suggest_question.unapproved? %>
+      <%= link_to t("suggest_question.approve"),
+        {status: "approved"}, method: :put, class: "btn btn-success" %>
+      <%= link_to t("suggest_question.reject"),
+        {status: "rejected"}, method: :put, class: "btn btn-default" %>
+    <% end %>
+    <%= link_to t("suggest_question.delete"),
+      admin_suggest_question_path(@suggest_question),
+      method: :delete, data: {confirm: t("suggest_question.confirm")},
+      class: "btn btn-danger" %>
+  </div>
+</div>
