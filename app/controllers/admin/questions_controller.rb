@@ -16,11 +16,11 @@ class Admin::QuestionsController < ApplicationController
     if @question.save
       @subject = @question.subject
       current_user.generate_activity "created", @question
-      flash[:success] = t "question.created_success"
+      flash.now[:success] = t "question.created_success"
       redirect_to admin_subject_path @subject
     else
       load_subjects
-      flash[:danger] = t "question.created_fail"
+      flash.now[:danger] = t "question.created_fail"
       render :new
     end
   end
@@ -29,7 +29,7 @@ class Admin::QuestionsController < ApplicationController
     if @question.update_attributes question_params
       current_user.generate_activity "updated", @question
       flash[:success] = t "question.update_success"
-      redirect_to admin_question_path @question
+      redirect_to admin_subject_path @subject
     else
       load_subjects
       render :show
@@ -40,7 +40,7 @@ class Admin::QuestionsController < ApplicationController
     if @question.destroy
       current_user.generate_activity "deleted", @question
       flash[:success] = t "question.destroy_success"
-      redirect_to admin_questions_path
+      redirect_to admin_subject_path @subject
     else
       flash[:danger] = t "question.destroy_fail"
       redirect_to root_url

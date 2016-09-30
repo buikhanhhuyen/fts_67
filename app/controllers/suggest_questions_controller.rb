@@ -22,9 +22,10 @@ class SuggestQuestionsController < ApplicationController
       current_user.suggest_questions.new suggest_question_params
     if @suggest_question.save
       flash[:success] = t "suggest_question.create_success"
-      redirect_to @suggest_question
+      redirect_to suggest_questions_path
     else
       load_subjects
+      flash.now[:danger] = t "suggest_question.create_error"
       render :new
     end
   end

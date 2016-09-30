@@ -20,6 +20,7 @@ class Admin::SubjectsController < ApplicationController
     else
       @subject.questions.all
     end
+    @question = Question.new
   end
 
   def new

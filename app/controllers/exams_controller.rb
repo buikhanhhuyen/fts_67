@@ -16,8 +16,16 @@ class ExamsController < ApplicationController
     @exam = current_user.exams.new exam_params
     if @exam.save
       flash[:success] = t "exam.create_success"
+      respond_to do |format|
+        format.html {redirect_to exams_path}
+        format.js
+      end
     else
       flash[:danger] = t "exam.create_error"
+      respond_to do |format|
+        format.html {redirect_to new_exams_path}
+        format.js
+      end
     end
     redirect_to root_path
   end
